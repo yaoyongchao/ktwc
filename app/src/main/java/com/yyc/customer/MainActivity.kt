@@ -21,6 +21,9 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initView() {
+
+
+
 //        L.e("aa" + BaseApplication.INSTANCE.getAppContext())
         L.e("aa" + BaseApplication.instance())
         L.e("aa" + BaseApplication.instance().getAppContext())
