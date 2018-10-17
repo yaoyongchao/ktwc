@@ -3,6 +3,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -67,4 +68,15 @@ dependencies {
     api 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:2.2.2'
 // If you want pre-written Activities and Fragments you can subclass as providers
     api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'*/
+
+//    Dagger2.0
+    api 'com.google.dagger:dagger:2.15'
+    kapt 'com.google.dagger:dagger-compiler:2.15'
+
+    //https://github.com/square/leakcanary
+    debugApi 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+    releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+    // Optional, if you use support library fragments:
+    debugApi 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.1'
 }
+

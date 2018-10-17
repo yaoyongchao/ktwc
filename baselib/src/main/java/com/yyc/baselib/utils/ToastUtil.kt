@@ -1,7 +1,8 @@
 package com.yyc.baselib.utils
 
+import android.annotation.SuppressLint
 import android.widget.Toast
-import com.yyc.baselib.BaseApplication
+import com.yyc.baselib.injector.BaseApplication
 
 /**
  * Author: Austin
@@ -10,12 +11,14 @@ import com.yyc.baselib.BaseApplication
  */
 class ToastUtil {
     companion object {
+        @SuppressLint("StaticFieldLeak")
+        private var mContext = BaseApplication.appContext
         public fun show(msg: String) {
-            Toast.makeText(BaseApplication.instance().applicationContext,msg,Toast.LENGTH_SHORT).show()
+            Toast.makeText(mContext,msg,Toast.LENGTH_SHORT).show()
         }
 
         public fun showLong(msg: String) {
-            Toast.makeText(BaseApplication.instance().applicationContext,msg,Toast.LENGTH_LONG).show()
+            Toast.makeText(mContext,msg,Toast.LENGTH_LONG).show()
         }
     }
 }

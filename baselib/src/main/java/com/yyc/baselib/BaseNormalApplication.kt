@@ -2,7 +2,7 @@ package com.yyc.baselib
 
 import android.app.Application
 import android.content.Context
-import com.yyc.baselib.http.RetrofitHelper
+import com.yyc.baselib.injector.BaseApplication
 import com.yyc.baselib.utils.L
 
 /**
@@ -10,7 +10,7 @@ import com.yyc.baselib.utils.L
  * Date: 2018/10/8
  * Description:
  */
-class BaseApplication: Application(){
+class BaseNormalApplication: Application(){
     private var mContext: Context? = null
 
     override fun onCreate() {
@@ -24,7 +24,7 @@ class BaseApplication: Application(){
 //        val INSTANCE: BaseApplication by lazy (mode = LazyThreadSafetyMode.SYNCHRONIZED) {
 //            BaseApplication()
 //        }
-        private var instance: BaseApplication? = null
+        private var instance: BaseNormalApplication? = null
 //        private var mContext: Context? = null
         fun instance() = instance!!
 //        fun appContext() = mContext!!

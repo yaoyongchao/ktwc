@@ -8,7 +8,7 @@ import java.lang.reflect.ParameterizedType;
  * Description:
  */
 
-public class CreatUtil {
+public class CreatUtilOne {
     /**
      * 获取T类型然后自动new出对象
      * @param o

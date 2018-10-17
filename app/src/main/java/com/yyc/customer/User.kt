@@ -1,13 +1,11 @@
 package com.yyc.customer
 
-/**
- * @Author: Austin
- * @Date: 2018/10/12
- * @Description:
- */
-class User<T>(t: T) {
-    var age = t
+import android.util.Log
 
+class User {
+//    var t: T? = null
 
-
+    fun log() {
+        Log.e("aa","132")
+    }
 }

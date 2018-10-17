@@ -1,10 +1,8 @@
 package com.yyc.baselib.utils;
 
 
-import com.yyc.baselib.BaseApplication;
+import com.yyc.baselib.injector.BaseApplication;
 
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Action;
@@ -24,7 +22,7 @@ public class MyRxScheduler {
     public static <T> ObservableTransformer<T,T> ioMain() {
         return observable -> observable.subscribeOn(Schedulers.io())
                 .doOnSubscribe(disposable -> {
-                    if (!NetWorkUtils.Companion.isConnectedByState(BaseApplication.Companion.instance().getApplicationContext())) {
+                    if (!NetWorkUtils.Companion.isConnectedByState(BaseApplication.Companion.getAppContext())) {
                         disposable.dispose();
                         L.Companion.d("doOnSubscribe -- There's no network link.");
                         ToastUtil.Companion.show("网络异常请检查网络");
