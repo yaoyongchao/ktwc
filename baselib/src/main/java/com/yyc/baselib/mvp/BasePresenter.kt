@@ -15,12 +15,12 @@ import javax.inject.Inject
  * Description: presenter同时持有Model和View
  */
 
-abstract class BasePresenter<M : BaseModel, V> {
-//    @JvmField
-//    @Inject
-//    var model: M? =null//可空类型
+abstract class BasePresenter<M : BaseModel , V : BaseView> {
+    @JvmField
+    @Inject
+    var model: M? =null//可空类型
 //    var model: BaseModel? =null//可空类型
-    var model: BaseModel? = null
+//    var model: BaseModel? = null
     private val view: V? = null
     private var mViewRef: WeakReference<V>? = null
 

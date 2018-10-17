@@ -7,7 +7,7 @@ import com.yyc.baselib.mvp.BaseView
 import com.yyc.baselib.utils.L
 import javax.inject.Inject
 
-abstract class MvpActivity</*V : BaseView, */  P : BasePresenter<*,*> /*Comparable<BasePresenter<*>>*/ >: BaseActivity(){
+abstract class MvpActivity<P : BasePresenter<*,*> >: BaseActivity(){
     @JvmField
     @Inject
     var mPresenter: P? =null//可空类型
@@ -15,13 +15,10 @@ abstract class MvpActivity</*V : BaseView, */  P : BasePresenter<*,*> /*Comparab
     override fun onCreate(savedInstanceState: Bundle?) {
 //        mPresenter = CreatUtilOne.getT(this,0)
         super.onCreate(savedInstanceState)
-//        DaggerMvpActivityComponent.builder().build().inject(this)
-//        L.e("P: $mPresenter" )
+//        mPresenter?.attachView(this)
     }
 
     open override fun initView() {
-//        mPresenter?.attachView()
-//        mPresenter?.attachView(this as Nothing)
     }
 
     override fun onDestroy() {

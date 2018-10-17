@@ -7,4 +7,5 @@ import dagger.Component
 @Component()
 interface ForeComponent{
     fun inject(foreActivity: ForeActivity)
+    fun inject(forePresenter: ForePresenter)
 }
