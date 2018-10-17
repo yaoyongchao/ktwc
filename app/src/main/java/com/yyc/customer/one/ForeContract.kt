@@ -8,7 +8,7 @@ interface ForeContract {
     interface ForeView: BaseView {
         fun Login()
     }
-    abstract class ForePresenter(): BasePresenter<ForeContract.ForeView>() {
+    abstract class ForePresenter(): BasePresenter<ForeContract.ForeModel,ForeContract.ForeView>() {
         abstract fun Login()
 
     }

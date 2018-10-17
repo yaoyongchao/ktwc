@@ -5,11 +5,11 @@ import javax.inject.Inject
 
 class ForePresenter public @Inject
 constructor(): ForeContract.ForePresenter() {
-    @Inject
-    lateinit var model: ForeModel
-    @Inject
+//    @Inject
+//    lateinit var model: ForeModel
     override fun Login() {
-        L.e("present:" + model + "---++=" + getView())
-        model.getData()
+//        L.e("present:" + model + "---++=" + getView())
+    L.e("model: $model")
+//        model.getData()
     }
 }

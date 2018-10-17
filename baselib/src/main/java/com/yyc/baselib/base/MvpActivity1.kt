@@ -7,7 +7,7 @@ import com.yyc.baselib.mvp.BaseView
 import com.yyc.baselib.utils.L
 import javax.inject.Inject
 
-abstract class MvpActivity</*V : BaseView, */  P : BasePresenter<*,*> /*Comparable<BasePresenter<*>>*/ >: BaseActivity(){
+abstract class MvpActivity1</*V : BaseView, */  P : BasePresenter<*,*> /*Comparable<BasePresenter<*>>*/ >: BaseActivity(){
     @JvmField
     @Inject
     var mPresenter: P? =null//可空类型

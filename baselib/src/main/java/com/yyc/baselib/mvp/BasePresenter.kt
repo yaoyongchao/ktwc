@@ -1,6 +1,10 @@
 package com.yyc.baselib.mvp
 
 
+import android.util.Log
+import com.yyc.baselib.injector.component.DaggerBasePresenterComponent
+import com.yyc.baselib.injector.module.BasePresenterModule
+import com.yyc.baselib.utils.CreatUtilOne
 import java.lang.ref.WeakReference
 import javax.inject.Inject
 
@@ -11,12 +15,12 @@ import javax.inject.Inject
  * Description: presenter同时持有Model和View
  */
 
-abstract class BasePresenter</*M,*/ V> {
+abstract class BasePresenter<M : BaseModel, V> {
 //    @JvmField
 //    @Inject
 //    var model: M? =null//可空类型
 //    var model: BaseModel? =null//可空类型
-//    var model: BaseModel? = null
+    var model: BaseModel? = null
     private val view: V? = null
     private var mViewRef: WeakReference<V>? = null
 
@@ -26,6 +30,8 @@ abstract class BasePresenter</*M,*/ V> {
     fun attachModelView(/*M pModel,*/pView: V) {
         //        this.model = pModel;
         mViewRef = WeakReference(pView)
+        model =  CreatUtilOne.getT(this,0)
+        Log.e("aa","---" + model)
     }
 
     /**
@@ -35,6 +41,12 @@ abstract class BasePresenter</*M,*/ V> {
      */
     fun attachView(pView: V) {
         mViewRef = WeakReference(pView)
+        Log.e("aa","attachView")
+        model =  CreatUtilOne.getT(this,0)
+        Log.e("aa","---" + model)
+//        DaggerBasePresenterComponent.builder().build().
+//        DaggerBasePresenterComponent.builder().
+//        DaggerBasePresenterComponent.builder().basePresenterModule(BasePresenterModule(M as BaseModel))
     }
 
     fun getView(): V? {

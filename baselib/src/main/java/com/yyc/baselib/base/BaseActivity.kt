@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.LinearLayout
 import com.yyc.baselib.R
+import com.yyc.baselib.injector.BaseApplication
+import com.yyc.baselib.injector.component.DaggerActivityComponent
 import com.yyc.baselib.utils.L
 import com.yyc.baselib.widget.CustomToolBar
 
@@ -26,6 +28,7 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener , Custom
         mContext = this
         initView()
         initData()
+//DaggerActivityComponent.builder().applicationComponent(application as BaseApplication.ApplicationComponent)
     }
 
     private fun initRootView(): View {

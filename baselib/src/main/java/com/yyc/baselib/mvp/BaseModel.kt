@@ -1,10 +1,8 @@
-package com.yyc.baselib.mvp;
+package com.yyc.baselib.mvp
 
 /**
  * Author: Austin
  * Time: 2018/7/18
  * Description:
  */
-public interface BaseModel {
-
-}
+interface BaseModel
