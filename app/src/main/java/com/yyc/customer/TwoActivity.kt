@@ -24,7 +24,7 @@ class TwoActivity : BaseActivity() {
         ServiceFactory.getService()
                 .login1()
                 .compose(MyRxScheduler.ioMain())
-                .subscribe(object : BaseObserver<User>(this){
+                .subscribe(object : BaseObserver<User>(){
                     override fun onSuccess(t: User?) {
                         L.e("name: --- " + t!!.name + t!!.age)
                     }

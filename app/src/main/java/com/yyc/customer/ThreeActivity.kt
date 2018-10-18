@@ -23,7 +23,7 @@ class ThreeActivity : BaseActivity() {
 //                .compose<BaseEntity<User>>(RxSchedulers.ioMain<BaseEntity<User>>(this))
                 //                .subscribeOn(Schedulers.io())
                 //                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(object : BaseObserver<User>(this) {
+                .subscribe(object : BaseObserver<User>() {
                     override fun onSuccess(user: User?) {
 
                     }

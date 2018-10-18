@@ -15,7 +15,7 @@ import io.reactivex.disposables.Disposable
  * Date: 2018/10/9
  * Description:
  */
-abstract class BaseObserver<T> (context: Context) : Observer<BaseEntity<T>> {
+abstract class BaseObserver<T> () : Observer<BaseEntity<T>> {
 //    private val mContext: Context
     private val SUCCESS_CODE = 0
 

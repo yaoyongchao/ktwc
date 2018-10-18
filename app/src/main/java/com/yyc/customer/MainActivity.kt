@@ -27,6 +27,9 @@ class MainActivity : BaseActivity() {
 
     override fun initView() {
 
+
+        startActivity(Intent(this,TwoActivity::class.java))
+
 //        DaggerMainComponent.builder().build().inject(this)
 
 //        aa = "zs"
@@ -39,9 +42,9 @@ class MainActivity : BaseActivity() {
 //        L.e("context:" + BaseApplication.appContext + " ---" + BaseApplication.instance)
 
 
-        var intent = Intent()
-        intent.setClass(this,ForeActivity::class.java)
-        startActivity(intent)
+//        var intent = Intent()
+//        intent.setClass(this,ForeActivity::class.java)
+//        startActivity(intent)
 
 
     }
